@@ -13,8 +13,6 @@ function App() {
  
   useEffect(()=> {
     if(userData=== null){
-
-    
     handleMovies()
     }
   }, [retry])
@@ -23,7 +21,7 @@ function App() {
       setIsLoading(true);
       setError(null);
       try{
-        const response = await fetch('https://swapi.py4e.com/api/film/');
+        const response = await fetch('https://swapi.py4e.com/api/films/');
         if(!response.ok){
           throw new Error('Something went wrong ...Retrying')
         }
@@ -79,7 +77,8 @@ function App() {
       <MovieList movies= {movie} />
     ))}
     {!isLoading && error && <p>{error}</p> }
-    {retry && <button onClick={handleRetry}>Cancel Retrying</button>}
+    {error && dataRetry && <button onClick={handleRetry}>Cancel Retrying</button> }
+   
       
     </section>
 
