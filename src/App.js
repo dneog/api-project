@@ -5,7 +5,10 @@ import MovieList from './MovieList';
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading]= useState(false);
+
   async function handleMovies(){
+    setIsLoading(true)
     const response = await fetch('https://swapi.py4e.com/api/films/');
     const data = await response.json();
 
@@ -18,6 +21,7 @@ function App() {
       }
     })
     setMovies(movieList)
+    setIsLoading(false)
   }
   
   
@@ -27,7 +31,8 @@ function App() {
     <button onClick={handleMovies}>Fetch Movies</button>
     </section>
     <section className='sectionTwo'>
-    {movies.map((movie)=> (
+    {isLoading && <p>Loading...</p>}
+    {!isLoading && movies.map((movie)=> (
       <MovieList movies= {movie} />
     ))}
       
