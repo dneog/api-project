@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import MovieList from './MovieList';
+import AddMovie from './AddMovie';
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -14,8 +15,11 @@ function App() {
   useEffect(()=> {
     if(userData=== null){
     handleMovies()
+   
     }
   }, [retry])
+
+  
 
     async function handleMovies(){
       setIsLoading(true);
@@ -68,6 +72,7 @@ function App() {
   
   return (
     <div className="App">
+    <AddMovie />
     <section className='sectionOne'>
     <button onClick={handleMovies}>Fetch Movies</button>
     </section>
