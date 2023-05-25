@@ -1,12 +1,13 @@
-import React from 'react'
+// import React, { useState } from 'react'
 
-const MovieList = ({movies}) => {
-  return (
-    <div className='content'>
-        <p className='title'>{movies.title}</p>
-        <p className='description'>{movies.openingText}</p>
-    </div>
-  )
-}
+// const MovieList = ({movies}) => {
 
-export default MovieList
+//  function handleDelete(id){
+
+//   }
+//   return (
+    
+//   )
+// }
+
+// export default MovieList

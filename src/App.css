@@ -48,3 +48,8 @@ button{
   margin: 10px auto;
   padding: 3px;
 }
+.del{
+  background: #ebebeb;
+  color: #5900b7;
+  margin: 5px;
+}

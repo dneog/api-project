@@ -2,22 +2,29 @@ import React, { useRef } from 'react';
 import './AddMovie.css';
 
 const AddMovie = (props) => {
-    const titleText= useRef('')
-    const openingText= useRef('')
-    const releaseText= useRef('')
-    function FormSubmitHandler(event){
+
+
+ 
+    const titleText= useRef(null)
+    const openingText= useRef(null)
+    const releaseText= useRef(null)
+    async function FormSubmitHandler(event){
         event.preventDefault();
         const movie = {
             title : titleText.current.value,
             openingText : openingText.current.value,
             releaseText : releaseText.current.value,
         }
-      console.log(movie)
-       
-    }
+      
+     
+  }
+ 
+  
+    
+   
   return (
     <div>
-        <form className='form' onClick={FormSubmitHandler}>
+        <form className='form' onSubmit={FormSubmitHandler}>
           <p className='add'>Title</p>
           <input className='inp' type="text" ref={titleText}/>
           <p className='add'>Opening Text</p>
@@ -28,6 +35,6 @@ const AddMovie = (props) => {
         </form>
     </div>
   )
-}
+  }
 
 export default AddMovie
